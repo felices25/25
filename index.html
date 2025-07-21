@@ -1,63 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/ness-css@latest/ness.min.css">
-
-  <title>25!!!</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="envelope-wrapper">
-      <div class="envelope">
-        <div class="letter content-center">
-          <div class="text">
-            <strong class="special-elite-regular">Feliz cumpleaños mi amor.</strong>
-            <p class="special-elite-regular">
-              25 años no lo puedo creer, me siento afortunada de celebrarlos contigo <br>
-              espero que disfrutes este regalo mientras esperes el físico. <br>
-            </p>
-            
-          </div>
-        </div>
-      </div>
-      <div class="heart"></div>
-    </div>
-    <!-- <a href="menu.html" class="btn">Ábreme</a> -->
-  </div>
-  <a href="laberinto1.html" class="floating-btn hidden" id="go-to-menu">
-    <i class="fas fa-gift"></i> 
-  </a>
-
-  <script>
-
+    <meta charset="UTF-8" />
+    <title>Test grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    const envelope = document.querySelector('.envelope-wrapper');
-    const goToMenuBtn = document.getElementById('go-to-menu');
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    envelope.addEventListener('click', () => {
-    envelope.classList.toggle('flap');
-
-    if (envelope.classList.contains('flap')) {
-        goToMenuBtn.classList.remove('hidden');
-        goToMenuBtn.classList.add('visible');
-    } else {
-        goToMenuBtn.classList.remove('visible');
-        goToMenuBtn.classList.add('hidden');
-    }
-    });
-
+    <!-- diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
 
 
-  
+    <!-- p5.js -->
 
-  </script>
-</body>
+    <body class="h-screen flex items-center justify-center bg-[url(fondo.jpg)]">
+        <div class="grid grid-flow-col grid-rows-3 gap-4">
+            <div class=" row-span-3 ">
+                <h1 class="text-[#ffffff] text-4xl font-bold  text-center mb-6">Test Grid Layout</h1>
+                <p class="text-[#ffffff] text-lg text-center mb-4">This is a simple grid layout example using Tailwind CSS.</p>
+                <img src="icons/icon_feliz.png"  class="mx-auto mb-4 rounded-lg shadow-lg">
+            </div>
+            <div class="col-span-2 ">
+                <section class="message -left">
+      
+                <div class="nes-balloon from-left">
+                    <p>Hello NES.css</p>
+                </div>
+                </section>
+
+            </div>
+            <div class="col-span-2 row-span-2 ">
+                <p class="text-gray-700 text-lg">Feel free to customize the grid as per your requirements.</p>
+
+            </div>
+        </div>
+    </body>
+
+
 </html>
