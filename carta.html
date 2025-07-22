@@ -13,6 +13,8 @@
 
     <!-- diseño -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="drag.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
     <!-- minify -->
@@ -41,38 +43,57 @@
                 <section class="message -left">
       
                 <div class="nes-balloon from-left">
-                    <p class="ness-font">wuauuuu que hermosas fotos!!! este es solo el inicio de un lindo album, cuando vuelva podremos llenarlo con muchos mas recuerdos </p>
+                    <p class="ness-font">texto texto texto</p>
                 </div>
                 </section>
 
             </div>
             <div class="col-span-2 row-span-2 ">
-                <div class="grid grid-cols-3 gap-4 place-items-center">
-                    <div id="camara" class="zoom place-items-center " >
-                      <a href="camara.html"  > <img src="elementos/volver.png" class="w-40  "> </a>
-                    </div>
-                    <div class="zoom place-items-center">
-                        <a href="calendario.html" > <img src="elementos/volver.png" class="w-40  "> </a>
-                    </div>
-                    <div class="zoom place-items-center">
-                        <a href="carta.html" > <img src="elementos/volver.png" class="w-40  "> </a>
-                    </div>
-                    <div class="zoom place-items-center">
-                        <a href="cd.html" > <img src="elementos/volver.png" class="w-40 " > </a>
-                    </div>
-                    <div class="zoom place-items-center">
-                        <a href="control.html" > <img src="elementos/volver.png" class="w-40 " > </a>
-                    </div>
-                    <div class=" zoom place-items-center">
-                        <a href="telefono.html"> <img src="elementos/volver.png" class="w-40 "> </a>
-                    </div>
-                    
-                </div>
+                <div >
+                    <img src="icons/icon_seria.png" id="icon_seria" class="w-40 mb-4 absolute left-40 top-40 cursor-move">
 
+                </div>
             </div>
 
         </div>
-            
+
+            <script>
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+// Ejecutar cuando todo esté cargado
+window.onload = function () {
+  dragElement(document.getElementById("icon_seria"));
+};
+</script>
+
 
     </body>
 
