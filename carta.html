@@ -13,8 +13,6 @@
 
     <!-- diseño -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="drag.js"></script>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
     <!-- minify -->
@@ -32,7 +30,7 @@
         <div class="grid grid-flow-col grid-rows-3 gap-4 place-items-center">
             <div class=" row-span-3 row-span-3 flex flex-col items-center justify-center">
 
-                <img src="icons/icon_beso.png"  class="mx-auto mb-4 ">
+                <img src="icons/llanto_gif.gif"  class="h-[300px] ">
                 <div >
                 <a href="index.html" class="place-items-center" > <img src="elementos/atras.png" class="h-10 "> </a>
 
@@ -43,57 +41,18 @@
                 <section class="message -left">
       
                 <div class="nes-balloon from-left">
-                    <p class="ness-font">texto texto texto</p>
+                    <p class="ness-font">NOOOOOOOOOOO la cuki se esta comiendo la carta que te escribiiii </p>
                 </div>
                 </section>
 
             </div>
             <div class="col-span-2 row-span-2 ">
-                <div >
-                    <img src="icons/icon_seria.png" id="icon_seria" class="w-40 mb-4 absolute left-40 top-40 cursor-move">
+                <img src="icons/cuki_gif.gif" class="w-60  place-items-center">
 
-                </div>
             </div>
 
         </div>
-
-            <script>
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  elmnt.onmousedown = dragMouseDown;
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-
-// Ejecutar cuando todo esté cargado
-window.onload = function () {
-  dragElement(document.getElementById("icon_seria"));
-};
-</script>
-
+            
 
     </body>
 

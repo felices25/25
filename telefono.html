@@ -30,7 +30,7 @@
         <div class="grid grid-flow-col grid-rows-3 gap-4 place-items-center">
             <div class=" row-span-3 row-span-3 flex flex-col items-center justify-center">
 
-                <img src="icons/icon_sorpresa.png"  class="h-[300px] ">
+                <img src="icons/sorprendida_gif.gif"  class="h-[300px] ">
                 <div >
                 <a href="index.html" class="place-items-center" > <img src="elementos/atras.png" class="h-10 "> </a>
 
@@ -51,9 +51,25 @@
                     <div id="camara" class="zoom place-items-center " >
                         <!-- TODO: hacer que suene el audio cuando se haga clic en el celular  -->
                       <a href="#"  > <img id="celular" src="elementos/celular.png" class="w-60 shake  "> </a>
-                    </div>
-                    
-                    
+
+
+
+                      <section>
+                        <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-default').showModal();">
+                            Open dialog
+                        </button>
+                        <dialog class="nes-dialog" id="dialog-default">
+                            <form method="dialog">
+                            <p class="title">Llamada entrante</p> <br>
+                            <p>de: el amor de tu vida </p>
+                            <br>
+                            <menu class="dialog-menu">
+                                <button class="nes-btn is-error ">Ignorar </button>
+                                <button class="nes-btn is-primary">Aceptar</button>
+                            </menu>
+                            </form>
+                        </dialog>
+                    </section>
                 </div>
 
             </div>

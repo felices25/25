@@ -1,0 +1,101 @@
+
+/* html,
+body {
+  width: 100%;     
+  height: 100%;    
+} */
+
+#cake {
+  display: block;                /* Hace que el elemento se comporte como bloque */
+  position: relative;           /* Posiciona el elemento relativamente a su contenedor */
+  margin: -10em auto 1em auto;    /* Centra horizontalmente con auto, y lo sube 10em desde el top */
+}
+
+/* ============================================== Candle (vela) */
+
+.velas {
+  background: #ffffff;                  /* Color de fondo blanco para la vela */
+  border-radius: 0px;                   /* Sin bordes redondeados */
+  position: absolute;                   /* Posicionamiento absoluto dentro del contenedor */
+  top: 100px;                           /* Posición desde el top del contenedor */
+  left: 50%;                            /* Posición horizontal al 50% del contenedor */
+  margin-left: -2.4px;                  /* Mueve ligeramente a la izquierda para centrar */
+  margin-top: -8.33333333px;           /* Sube la vela un poco para ajustarla */
+  width: 5px;                           /* Ancho de la vela */
+  height: 35px;                         /* Altura de la vela */
+  transform: translateY(-100px);       /* Inicialmente desplaza la vela hacia arriba (fuera de vista) */
+  backface-visibility: hidden;         /* Oculta el reverso del elemento si se rota */
+  animation: in 500ms 6s ease-out forwards; /* Animación de entrada de la vela después de 6 segundos */
+}
+
+.velas:after,
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);     /* Líneas horizontales rojas translúcidas en la vela */
+  content: "";                          /* Genera contenido vacío */
+  position: absolute;                   /* Posicionamiento absoluto dentro de la vela */
+  width: 100%;                          /* Mismo ancho que la vela */
+  height: 2.22222222px;                /* Grosor de las líneas */
+}
+
+.velas:after {
+  top: 25%;      /* Coloca la línea a 25% desde arriba de la vela */
+  left: 0;       /* Alineado a la izquierda */
+}
+
+.velas:before {
+  top: 45%;      /* Coloca la otra línea a 45% desde arriba */
+  left: 0;
+}
+
+/* ============================================== Fire (llama) */
+
+.fuego {
+  border-radius: 100%;                /* Hace la llama completamente redonda/ovalada */
+  position: absolute;                 /* Posicionamiento absoluto respecto a la vela */
+  top: -20px;                         /* Coloca la llama encima de la vela */
+  left: 50%;                          /* Centrada horizontalmente */
+  margin-left: -2.6px;                /* Desplazamiento hacia la izquierda para centrarla */
+  width: 6.66666667px;                /* Ancho de la llama */
+  height: 18px;                       /* Altura de la llama */
+}
+
+/* Las siguientes líneas crean 5 llamas con diferentes velocidades de animación */
+.fuego:nth-child(1) {
+  animation: fuego 2s 6.5s infinite;       /* Animación fuego, inicia a los 6.5s, dura 2s, se repite infinitamente */
+}
+.fuego:nth-child(2) {
+  animation: fuego 1.5s 6.5s infinite;
+}
+.fuego:nth-child(3) {
+  animation: fuego 1s 6.5s infinite;
+}
+.fuego:nth-child(4) {
+  animation: fuego 0.5s 6.5s infinite;
+}
+.fuego:nth-child(5) {
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire */
+
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);        /* Color amarillo pálido translúcido */
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);  /* Brillo alrededor de la llama */
+    transform: translateY(0) scale(1);          /* Posición y escala normal */
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);          /* Color más rojizo y translúcido en medio de la animación */
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2); /* Aumenta el brillo */
+    transform: translateY(-20px) scale(0);      /* Sube y reduce la llama a cero tamaño */
+  }
+}
+
+/* Animación para que la vela "entre" desde arriba */
+@keyframes in {
+  to {
+    transform: translateY(0);   /* Finaliza la animación dejando la vela en su lugar original */
+  }
+}
+
+/* ============================================== Text styling */
